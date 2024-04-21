@@ -12,6 +12,9 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
+              with:
+                fetch-depth: 1
+                persist-credentials: true
 
             - name: Get all changed Dockerfiles
               id: changed_dockerfiles
@@ -19,7 +22,7 @@ jobs:
               with:
                 # Avoid using single or double quotes for multiline patterns
                 files: |
-                  **Dockerfile
+                  Dockerfile
               
             - name: List all changed files markdown files
               if: steps.changed_dockerfiles.outputs.any_changed == 'true'
