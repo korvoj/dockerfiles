@@ -20,3 +20,12 @@ jobs:
                 # Avoid using single or double quotes for multiline patterns
                 files: |
                   **Dockerfile
+              
+            - name: List all changed files markdown files
+              if: steps.changed_dockerfiles.outputs.any_changed == 'true'
+              env:
+                ALL_CHANGED_FILES: ${{ steps.changed_dockerfiles.outputs.all_changed_files }}
+              run: |
+                for file in ${ALL_CHANGED_FILES}; do
+                  echo "$file was changed"
+                done
