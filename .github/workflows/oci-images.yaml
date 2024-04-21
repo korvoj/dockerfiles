@@ -40,7 +40,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
     
-      - name: Determine tags
+      - name: Build and push
         if: steps.changed_dockerfiles.outputs.any_changed == 'true' 
         env:
           ALL_CHANGED_DOCKERFILES: ${{ steps.changed_dockerfiles.outputs.all_changed_files }}
@@ -50,7 +50,7 @@ jobs:
             echo "Building ${file}..."
             current_tag=$(grep '^FROM' ${file} | awk -F: '{print $2}')
             current_date=$(date +"%Y%m%d")
-            image_name=$(grep '^LABEL IMAGE_NAME' ${file} | awk -F= '{print $2}')
+            image_name=$(grep '^LABEL IMAGE_NAME' ${file} | awk -F= '{gsub(/"/, "", $2); print $2}')
             docker build -f ${file} -t $image_name:$current_tag-$current_date .
             docker push ${DOCKER_USERNAME}/${image_name}:${current_tag}-${current_date}
           done
