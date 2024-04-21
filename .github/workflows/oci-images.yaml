@@ -13,5 +13,10 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
 
-            - name: Find changed Dockerfiles
-              run: git diff --name-only ${{ github.event.before }}..${{ github.sha }} | grep 'Dockerfile'
+            - name: Get all changed Dockerfiles
+              id: changed_dockerfiles
+              uses: tj-actions/changed-files@v44
+              with:
+                # Avoid using single or double quotes for multiline patterns
+                files: |
+                  **Dockerfile
