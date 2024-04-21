@@ -51,7 +51,8 @@ jobs:
             current_tag=$(grep '^FROM' ${file} | awk -F: '{print $2}')
             current_date=$(date +"%Y%m%d")
             image_name=$(grep '^LABEL IMAGE_NAME' ${file} | awk -F= '{gsub(/"/, "", $2); print $2}')
-            docker build -f ${file} -t $image_name:$current_tag-$current_date .
-            docker push ${DOCKER_USERNAME}/${image_name}:${current_tag}-${current_date}
+            tag=${DOCKER_USERNAME}/${image_name}:${current_tag}-${current_date}
+            docker build -f ${file} -t ${tag} .
+            docker push ${tag}
           done
 
