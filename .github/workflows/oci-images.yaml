@@ -1,0 +1,17 @@
+name: Build and upload Docker images
+
+on:
+    pull_request: 
+        paths: 
+            - '**/Dockerfile'
+
+jobs:
+    build_and_publish:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Find changed Dockerfiles
+              run: git diff --name-only $GITHUB_BASE_REF...$GITHUB_HEAD_REF | grep 'Dockerfile'
