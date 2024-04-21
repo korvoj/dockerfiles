@@ -1,34 +1,43 @@
 name: Build and upload Docker images
 
 on:
-    pull_request: 
-        paths: 
-            - '**/Dockerfile'
+  pull_request:
+    paths:
+      - "**/Dockerfile"
 
 jobs:
-    build_and_publish:
-        runs-on: ubuntu-latest
+  build_and_publish:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
-              with:
-                fetch-depth: 1
-                persist-credentials: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          persist-credentials: true
 
-            - name: Get all changed Dockerfiles
-              id: changed_dockerfiles
-              uses: tj-actions/changed-files@v44
-              with:
-                # Avoid using single or double quotes for multiline patterns
-                files: |
-                  **/Dockerfile
-              
-            - name: List all changed files markdown files
-              if: steps.changed_dockerfiles.outputs.any_changed == 'true'
-              env:
-                ALL_CHANGED_FILES: ${{ steps.changed_dockerfiles.outputs.all_changed_files }}
-              run: |
-                for file in ${ALL_CHANGED_FILES}; do
-                  echo "$file was changed"
-                done
+      - name: Get all changed Dockerfiles
+        id: changed_dockerfiles
+        uses: tj-actions/changed-files@v44
+        with:
+          # Avoid using single or double quotes for multiline patterns
+          files: |
+            **/Dockerfile
+
+      - name: List all changed Dockerfiles
+        if: steps.changed_dockerfiles.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_DOCKERFILES: ${{ steps.changed_dockerfiles.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_DOCKERFILES}; do
+            echo "$file was changed"
+          done
+      
+      - name: Determine tags
+        if: steps.changed_dockerfiles.outputs.any_changed == 'true' 
+        run: |
+          for file in ${ALL_CHANGED_DOCKERFILES}; do
+            grep '^FROM' ${file} | awk -F: '{print $2}'
+            docker build -f ${file} -t test .
+          done
+          
