@@ -37,6 +37,7 @@ jobs:
         if: steps.changed_dockerfiles.outputs.any_changed == 'true' 
         run: |
           for file in ${ALL_CHANGED_DOCKERFILES}; do
+            echo "Building ${file}..."
             grep '^FROM' ${file} | awk -F: '{print $2}'
             docker build -f ${file} -t test .
           done
