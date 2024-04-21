@@ -54,5 +54,9 @@ jobs:
             tag=${DOCKER_USERNAME}/${image_name}:${current_tag}-${current_date}
             docker build -f ${file} -t ${tag} .
             docker push ${tag}
+            docker tag ${tag} ${DOCKER_USERNAME}/${image_name}:${current_tag}
+            docker push ${DOCKER_USERNAME}/${image_name}:${current_tag}
+            docker tag ${tag} ${DOCKER_USERNAME}/${image_name}:latest
+            docker push ${DOCKER_USERNAME}/${image_name}:latest
           done
 
