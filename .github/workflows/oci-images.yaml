@@ -35,6 +35,8 @@ jobs:
       
       - name: Determine tags
         if: steps.changed_dockerfiles.outputs.any_changed == 'true' 
+        env:
+          ALL_CHANGED_DOCKERFILES: ${{ steps.changed_dockerfiles.outputs.all_changed_files }}
         run: |
           for file in ${ALL_CHANGED_DOCKERFILES}; do
             echo "Building ${file}..."
