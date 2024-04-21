@@ -22,7 +22,7 @@ jobs:
               with:
                 # Avoid using single or double quotes for multiline patterns
                 files: |
-                  Dockerfile
+                  **/Dockerfile
               
             - name: List all changed files markdown files
               if: steps.changed_dockerfiles.outputs.any_changed == 'true'
