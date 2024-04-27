@@ -1,4 +1,4 @@
-FROM quay.io/helmpack/chart-testing:v3.10.1
+FROM quay.io/helmpack/chart-testing:v3.11.0
 LABEL IMAGE_NAME="helm-lint-yq"
 
 # renovate: datasource=github-releases depName=fsaintjacques/semver-tool
