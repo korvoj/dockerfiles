@@ -51,7 +51,7 @@ jobs:
         run: |
           for file in ${ALL_CHANGED_DOCKERFILES}; do
             echo "Building ${file}..."
-            current_tag=$(grep '^FROM' ${file} | awk -F: '{print $2}')
+            current_tag=$(grep '^FROM' ${file} | awk -F[:@] '{print $2}')
             current_date=$(date +"%Y%m%d")
             image_name=$(grep '^LABEL IMAGE_NAME' ${file} | awk -F= '{gsub(/"/, "", $2); print $2}')
             tag=${DOCKER_USERNAME}/${image_name}:${current_tag}-${current_date}
