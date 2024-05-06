@@ -1,1 +1,1 @@
-Based on [instrumentisto/rsync-ssh-docker-image](https://github.com/instrumentisto/rsync-ssh-docker-image) and extend with a git client.
+Based on [instrumentisto/rsync-ssh-docker-image](https://github.com/instrumentisto/rsync-ssh-docker-image) and extended with a git client.
