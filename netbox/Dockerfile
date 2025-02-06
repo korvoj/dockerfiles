@@ -1,4 +1,4 @@
-FROM netboxcommunity/netbox:v4.1@sha256:4894ec2c79db779cb57f6dc4edf5839877d4f7e278961c7e540b0fa785afae00
+FROM netboxcommunity/netbox:v4.2@sha256:06b882ea0a44c50f212e09babf9a411a759fb8b4c4a3085282bd5e8565b4334b
 LABEL IMAGE_NAME="netbox"
 # renovate: datasource=github-releases depName=FlxPeters/netbox-plugin-prometheus-sd
 ENV PROMETHEUS_NETBOX_PLUGIN_VERSION==1.1.0
