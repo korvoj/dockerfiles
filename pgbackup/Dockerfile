@@ -1,4 +1,4 @@
-FROM ubuntu:25.04@sha256:dec2d4d65481a2f551e7212d7da620548272a5fa923a27c3f2f0394e1e461d38
+FROM ubuntu:plucky-20250714@sha256:95a416ad2446813278ec13b7efdeb551190c94e12028707dd7525632d3cec0d1
 LABEL IMAGE_NAME="pgbackup"
 
 RUN apt-get update && apt-get install -y postgresql-client-17 && apt-get clean
