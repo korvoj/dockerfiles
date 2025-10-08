@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.104.2
+FROM codercom/code-server:4.104.3
 LABEL IMAGE_NAME="code-server-java"
 
 USER root
