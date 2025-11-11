@@ -21,7 +21,7 @@ jobs:
 
       - name: Get all changed Dockerfiles
         id: changed_dockerfiles
-        uses: tj-actions/changed-files@v46
+        uses: tj-actions/changed-files@v47
         with:
           # Avoid using single or double quotes for multiline patterns
           files: |
