@@ -1,4 +1,4 @@
-FROM instrumentisto/rsync-ssh:alpine@sha256:19f45502e651157313313b50ef54fc18f5c969f00752189a40d940f079d2d1bf
+FROM instrumentisto/rsync-ssh:alpine@sha256:89eec6a3fbcf306c31988f9f95f8c38ee456c950137e6ab354027f9f0485f986
 LABEL IMAGE_NAME="rsync-ssh"
 
 RUN apk update \
