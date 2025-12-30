@@ -1,10 +1,10 @@
-FROM quay.io/helmpack/chart-testing:v3.12.0
+FROM quay.io/helmpack/chart-testing:v3.14.0
 LABEL IMAGE_NAME="helm-lint-yq"
 
 # renovate: datasource=github-releases depName=fsaintjacques/semver-tool
 ENV SEMVER_TOOL_VERSION=3.4.0
 # renovate: datasource=github-releases depName=mikefarah/yq
-ENV YQ_VERSION=v4.45.2
+ENV YQ_VERSION=v4.50.1
 
 RUN wget -O /usr/local/bin/semver https://raw.githubusercontent.com/fsaintjacques/semver-tool/${SEMVER_TOOL_VERSION}/src/semver && \
   chmod +x /usr/local/bin/semver && \
