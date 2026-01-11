@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.107.0
+FROM codercom/code-server:4.107.1
 LABEL IMAGE_NAME="code-server-python"
 
 USER root
