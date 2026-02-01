@@ -4,7 +4,7 @@ LABEL IMAGE_NAME="helm-lint-yq"
 # renovate: datasource=github-releases depName=fsaintjacques/semver-tool
 ENV SEMVER_TOOL_VERSION=3.4.0
 # renovate: datasource=github-releases depName=mikefarah/yq
-ENV YQ_VERSION=v4.52.1
+ENV YQ_VERSION=v4.52.2
 
 RUN wget -O /usr/local/bin/semver https://raw.githubusercontent.com/fsaintjacques/semver-tool/${SEMVER_TOOL_VERSION}/src/semver && \
   chmod +x /usr/local/bin/semver && \
