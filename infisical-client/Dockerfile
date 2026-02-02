@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:13-slim
 LABEL IMAGE_NAME="infisical-client"
 
 RUN apt-get update && apt-get install -y curl coreutils
