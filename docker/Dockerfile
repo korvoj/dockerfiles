@@ -1,4 +1,4 @@
-FROM docker:29.1.4
+FROM docker:29.2.1
 LABEL IMAGE_NAME="docker-git"
 
 RUN apk update \
