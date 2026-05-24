@@ -10,3 +10,4 @@ RUN apt-get update && apt-get install -y infisical && apt-get clean && rm -rf /v
 USER infisical-client
 
 CMD ["tail", "-f", "/dev/null"]
+
