@@ -1,7 +1,7 @@
 FROM netboxcommunity/netbox:v4.6.5
 LABEL IMAGE_NAME="netbox"
 # renovate: datasource=github-releases depName=FlxPeters/netbox-plugin-prometheus-sd
-ENV PROMETHEUS_NETBOX_PLUGIN_VERSION=v1.3.0
+ENV PROMETHEUS_NETBOX_PLUGIN_VERSION=v2.0.0
 # renovate: datasource=github-releases depName=netboxlabs/netbox-custom-objects
 ENV NETBOX_CUSTOM_OBJECTS_VERSION=v0.6.0
 
