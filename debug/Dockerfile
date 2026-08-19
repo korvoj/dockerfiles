@@ -1,4 +1,4 @@
-FROM ubuntu:26.04@sha256:3131b4cc82a783df6c9df078f86e01819a13594b865c2cad47bd1bca2b7063bb
+FROM ubuntu:26.04@sha256:6df9e8dd1eac389ebfef692c9648449adeb815d01e16e29cd6f3e50fe64ba9a6
 LABEL IMAGE_NAME="debug"
 
 RUN apt-get update && apt-get install -y \
