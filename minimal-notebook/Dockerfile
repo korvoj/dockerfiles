@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/minimal-notebook-3.13.15
+FROM quay.io/jupyter/minimal-notebook:python-3.13.15
 LABEL IMAGE_NAME="minimal-notebook"
 
 ARG NBGITPULLER_VERSION=1.2.2
