@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/tensorflow-notebook:x86_64-cuda12-python-3.13.15
+FROM quay.io/jupyter/tensorflow-notebook:x86_64-cuda-python-3.13.15
 LABEL IMAGE_NAME="tensorflow-notebook"
 
 # renovate: datasource=pypi depName=nbgitpuller versioning=pep440
