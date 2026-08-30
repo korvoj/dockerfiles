@@ -16,6 +16,11 @@
     {
       "matchPackageNames": ["jupyter/r-notebook"],
       "versioning": "regex:^notebook-?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["quay.io/jupyter/**"],
+      "versioning": "regex:^python-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
     }
   ]
 }
