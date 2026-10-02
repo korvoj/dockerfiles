@@ -1,4 +1,4 @@
-FROM ubuntu:26.04@sha256:cd21a4f68a617580279d4b091cb18e3af9fa8a87500665f0ae5f7f757d17d367
+FROM ubuntu:26.04@sha256:3595d7fc4286a33fad0fd853a4063e654287a9c3787437d7937c94ca3f7a804e
 LABEL IMAGE_NAME="pgbackup"
 
 RUN apt-get update && apt-get install -y postgresql-client-18 && apt-get clean
