@@ -1,4 +1,4 @@
-FROM ghcr.io/uninett/argus-all-plugins:2.10.0
+FROM ghcr.io/uninett/argus-all-plugins:2.10.2
 LABEL IMAGE_NAME="argus"
 # renovate: datasource=pypi depName=django-tasks
 ENV DJANGO_TASKS_VERSION=0.12.0
