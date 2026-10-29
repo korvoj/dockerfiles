@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/pytorch-notebook:x86_64-cuda12-python-3.13.16
+FROM quay.io/jupyter/pytorch-notebook:x86_64-cuda12-python-3.13.18
 LABEL IMAGE_NAME="pytorch-notebook"
 
 # renovate: datasource=pypi depName=nbgitpuller versioning=pep440
