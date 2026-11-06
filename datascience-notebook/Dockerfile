@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/datascience-notebook:python-3.13.18
+FROM quay.io/jupyter/datascience-notebook:python-3.13.18@sha256:bd29c4ef75f8a0fe3060e2a490ad2c71cd91a5fcf02f2bc2e01112bc04c61656
 LABEL IMAGE_NAME="datascience-notebook"
 
 # renovate: datasource=pypi depName=nbgitpuller versioning=pep440

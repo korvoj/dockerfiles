@@ -1,2 +1,2 @@
-FROM maildev/maildev:3.0.0
+FROM maildev/maildev:3.0.0@sha256:6e09695961f4aef9016a390ad391314a078220216601b15a35d389a7df2a3855
 LABEL IMAGE_NAME="maildev"
