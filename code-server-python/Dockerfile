@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.129.0@sha256:49d5e176224523b0c924ee35b05c51e9a87f9c170f650ee0f7da05a4581a79ff
+FROM codercom/code-server:4.145.0@sha256:992796b850b8b7ec6f7393b8dd2295840a65cf5071981990ff41ef52dd566c43
 LABEL IMAGE_NAME="code-server-python"
 
 USER root
