@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/scipy-notebook:python-3.13.18@sha256:457ec366e08750746a80537c46111911f9658fe1c665703edb4839197dd9383c
+FROM quay.io/jupyter/scipy-notebook:python-3.13.18@sha256:9d1087eda0dadd6e98763b346fcaa34aa10153067092fac39380669265c3c268
 LABEL IMAGE_NAME="scipy-notebook"
 
 # renovate: datasource=pypi depName=nbgitpuller versioning=pep440
