@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/minimal-notebook:python-3.13.18@sha256:3155a852274e642799e2ce9b51b779cb5ba20f6b1b0bc21e909cb8148f9659e2
+FROM quay.io/jupyter/minimal-notebook:python-3.13.18@sha256:b97cc9adde649c3b7b8209f4aa17996b7ec0df8b5424f22aae50ce1329d900c8
 LABEL IMAGE_NAME="minimal-notebook"
 
 # renovate: datasource=pypi depName=nbgitpuller versioning=pep440
