@@ -1,4 +1,4 @@
-FROM docker:29.10.0@sha256:4bbc7223f81db790097c6dea42fb93e05b8fead4f0431fbe6ccaba6e8473201c
+FROM docker:29.10.1@sha256:5d24ae532c4b32bea8fc5714ec34a7db838c9f668d18b6c772b2415196a2cd83
 LABEL IMAGE_NAME="docker-git"
 
 RUN apk update \
